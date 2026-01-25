@@ -1,4 +1,4 @@
-# Data Exploration – Check Distinct Values
+## Data Exploration – Check Distinct Values
 
   
 SELECT Gender, Count(Gender) as TotalCount,
@@ -11,7 +11,7 @@ Count(Contract) * 1.0 / (Select Count(*) from stg_Churn)  as Percentage
 from stg_Churn
 Group by Contract
 
-
+	
 SELECT Customer_Status, Count(Customer_Status) as TotalCount, Sum(Total_Revenue) as TotalRev,
 Sum(Total_Revenue) / (Select sum(Total_Revenue) from stg_Churn) * 100  as RevPercentage
 from stg_Churn
@@ -24,7 +24,9 @@ Group by State
 Order by Percentage desc
 
 
-# Data Exploration – Check Nulls
+
+	
+## Data Exploration – Check Nulls
 
   
 SELECT 
@@ -63,7 +65,9 @@ SELECT
 FROM stg_Churn;
 
 
-# Remove null and insert the new data into Prod table
+
+
+## Remove null and insert the new data into Prod table
 
   
 SELECT 
@@ -104,7 +108,8 @@ INTO [db_Churn].[dbo].[prod_Churn]
 FROM [db_Churn].[dbo].[stg_Churn];
 
 
-# Create View for Power BI
+
+## Create View for Power BI
 
   
 Create View vw_ChurnData as
